@@ -4,6 +4,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+from selenium.common.exceptions import ElementNotVisibleException
+
 
 options = webdriver.ChromeOptions()
 options.binary_location = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
@@ -22,22 +24,24 @@ login_click = driver.find_element_by_xpath('//*[@id="ajaxLogin"]').click()
 
 x = 1
 while x == 1:
+	try:
 
-	time.sleep(5)
+		# this is to select one of the answers
+		answer_click = driver.find_element_by_xpath('//*[@class="answer-label"]').click()
 
-	# this is to select one of the answers
-	answer_click = driver.find_element_by_xpath('//*[@class="answer-label"]').click()
+		# this is to click the 'submit answer' button
+		submit_click = driver.find_element_by_xpath('//*[@id="presentQuizForm-answerQuestionButton"]').click()
 
+		time.sleep(5)
 
+		next_button = driver.find_element_by_xpath('//input[@id="presentQuizForm-nextQuestionButton"]').click()
 
-	# this is to click the 'submit answer' button
-	submit_click = driver.find_element_by_xpath('//*[@id="presentQuizForm-answerQuestionButton"]').click()
+		driver.refresh()
 
-	time.sleep(5)
+	except ElementNotVisibleException:
+		driver.refresh()
 
-	next_button = driver.find_element_by_xpath('//input[@id="presentQuizForm-nextQuestionButton"]').click()
-
-	time.sleep(5)
+	
 
 # while 
 #https://medium.com/@stevennatera/web-scraping-with-selenium-and-chrome-canary-on-macos-fc2eff723f9e
