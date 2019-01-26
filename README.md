@@ -33,5 +33,5 @@ for link in topLinks:
 driver.quit()
 ```
 As you can see, it's actually quite simple. Because I want to make this as accessible as possible, I'll give a brief description of what's going on here. 
-The program is calling the Selenium libraries (it's calling the `webdriver` dependency in particular) so that it ca
+The program is importing the Selenium module (it's importing the `webdriver` attribute in particular) so that it ca
 
