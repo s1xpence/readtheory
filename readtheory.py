@@ -1,18 +1,29 @@
 # reddit.py
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 import time
 from selenium.common.exceptions import ElementNotVisibleException
 
 
 options = webdriver.ChromeOptions()
+
+# replace binary path with your own below
+
 options.binary_location = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+
 options.add_argument('window-size=800x841')
-# options.add_argument('headless')
+
+# uncomment line 19 if you want chrome to run without window
+# in background
+
+# options.add_argument('headless') 
+
 driver = webdriver.Chrome(chrome_options=options)
+
 driver.get('https://readtheory.org/auth/login')
+
+# change username and password to match your own. this is a
+# throwaway password i've implemented, so don't get any funny
+# ideas :)
 
 username = driver.find_element_by_xpath('//*[@id="username"]')
 username.send_keys('14367@students.isb.ac.th')
@@ -40,10 +51,7 @@ while x == 1:
 
 	except ElementNotVisibleException:
 		driver.refresh()
-
-	
-
-# while 
+ 
 #https://medium.com/@stevennatera/web-scraping-with-selenium-and-chrome-canary-on-macos-fc2eff723f9e
 
 
