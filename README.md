@@ -39,7 +39,8 @@ Although the program might seem very barebones, it was exactly what I needed to 
 
 ## Coding process: Part 2 (Getting my hands dirty)
 
-The first hurdle that I had to overcome was logging in.
+The first hurdle that I had to overcome was logging in. ![alt text](https://i.imgur.com/TAZYffg.png)
+
 
 
 
