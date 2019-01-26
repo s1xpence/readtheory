@@ -41,7 +41,17 @@ Although the program might seem very barebones, it was exactly what I needed to 
 
 The first hurdle that I had to overcome was logging in. ![alt text](https://i.imgur.com/TAZYffg.png)
 
+I decided to search StackOverflow for some threads on how to automatically login using Selenium. The first thread that popped up was [this one](https://stackoverflow.com/questions/21186327/fill-username-and-password-using-selenium-in-python). In this thread, the OP asks how to log in using Selenium. The solution that was provided was this:
+```
+username = driver.find_element_by_id("username")
+password = driver.find_element_by_id("password")
 
+username.send_keys("YourUsername")
+password.send_keys("Pa55worD")
+
+driver.find_element_by_name("submit").click()
+```
+You can see that both the username and password variable refers to a `driver.find_element_by_id` function. But because I wanted a more accurate and reliable way to locate elements in the webpage, I did a little more digging. Eventually, I started reading about `xpath` and how it could be potentionally used to our advantage in terms of automating actions (submitting forms, clicking buttons, the likes). 
 
 
 
