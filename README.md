@@ -35,11 +35,15 @@ driver.quit()
 As you can see, it's actually quite simple. Because I want to make this as accessible as possible, I'll give a brief description of what's going on here. 
 The program is importing a Selenium module that has the `webdriver` attribute first, and after that, it opens Google Chrome in "headless" mode (which basically means that Chrome is operating without a window). The program then instructs Chrome to navigate to reddit and to grab all of the titles on the front page of reddit, which the program would then print out in the terminal window. 
 
-Although the program may seem very barebones, it was exactly what I needed to understand how Selenium works (such as how to execute the Google Chrome Canary, use the webdriver function to open pages, and it also provided me with a fairly rudimentary understanding of what the `driver.find_elements_by_xpath` function does. This function is going to be *very* useful to us later on). 
+Although the program might seem very barebones, it was exactly what I needed to understand how Selenium works (such as how to execute the Google Chrome Canary, use the webdriver function to open pages, and it also provided me with a fairly rudimentary understanding of what the `driver.find_elements_by_xpath` function does. This function is going to be *very* useful to us later on). 
+
+## Coding process: Part 2 (Getting my hands dirty)
+
+The first hurdle that I had to overcome was logging in.
 
 
 
 
-*The program is importing the Selenium module (it's importing the `webdriver` attribute in particular), the `time` module, and a attribute to catch a error that the program faces often with (`ElementNotVisibleException`)
+* The program is importing the Selenium module (it's importing the `webdriver` attribute in particular), the `time` module, and a attribute to catch a error that the program faces often with (`ElementNotVisibleException`)
 What this program is going to do
 
