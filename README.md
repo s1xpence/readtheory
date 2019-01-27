@@ -51,6 +51,13 @@ password.send_keys("Pa55worD")
 
 driver.find_element_by_name("submit").click()
 ```
-You can see that both the username and password variable refers to a `driver.find_element_by_id` function. But because I wanted a more accurate and reliable way to locate elements in the webpage, I did a little more digging. Eventually, I started reading about `xpath` and how it could be potentionally used to our advantage in terms of automating actions (submitting forms, clicking buttons, the likes). According to "Selenium with Python" docs, `xpath` would be useful in the sense that 
-> XPath is the language used for locating nodes in an XML document... Selenium users can leverage this powerful language to target elements in their web applications... and [it] opens up all sorts of new possibilities such as locating the third checkbox on the page... One of the main reasons for using XPath is when you don’t have a suitable id or name attribute for the element you wish to locate."
+You can see that both the username and password variable refers to a `driver.find_element_by_id` function. But because I wanted a more accurate and reliable way to locate elements in the webpage, I did a little more digging. Eventually, I started reading about `xpath` and how it could be potentionally used to our advantage in terms of automating actions (submitting forms, clicking buttons, the likes). [According to "Selenium with Python" docs, `xpath` would be useful in the sense that:](https://selenium-python.readthedocs.io/locating-elements.html#locating-by-xpath)
+
+> XPath is the language used for locating nodes in an XML document... Selenium users can leverage this powerful language to target elements in their web applications... and [it] opens up all sorts of new possibilities such as locating the third checkbox on the page... One of the main reasons for using XPath is when you don’t have a suitable id or name attribute for the element you wish to locate.
+
+Basically, its saying that `xpath` offers a much more accurate way to target the element that you're interested in, and that includes abilities such as "locating the third checkbox on the page". This is exactly what I needed, and so I set about digging through the source code with the help of Google Chrome's "Inspect Element" function. Eventually, I found the specific line of code which corresponds to the "username" field on ReadTheory's website.
+
+```<input id="username" type="text" name="j_username" placeholder="Username">```
+
+(The "password" field also looks similar to this line of code above, the only difference being that you would replace the word "username" with "password" in all instances which it appears.)
 
