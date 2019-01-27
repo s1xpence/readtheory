@@ -61,3 +61,14 @@ Basically, its saying that `xpath` offers a much more accurate way to target the
 
 (The "password" field also looks similar to this line of code above, the only difference being that you would replace the word "username" with "password" in all instances which it appears.)
 
+Okay, so now that we know how to select an element that we're interested in, exactly how do we "type" characters into the input that we're interested in? I Googled for a bit before stumbling upon [this answer](https://stackoverflow.com/a/21186468) on StackOverflow.
+
+The guy who posted that answer states that we could use "`WebElement.send_keys` method to simulate key typing", which is all we really need. And thus, a few lines of new code was born.
+
+```
+username = driver.find_element_by_xpath('//*[@id="username"]')
+username.send_keys('14367@students.isb.ac.th')
+
+password = driver.find_element_by_xpath('//*[@id="password"]')
+password.send_keys('mhNF2PqdfjF3W')
+```
