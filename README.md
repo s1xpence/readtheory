@@ -51,10 +51,6 @@ password.send_keys("Pa55worD")
 
 driver.find_element_by_name("submit").click()
 ```
-You can see that both the username and password variable refers to a `driver.find_element_by_id` function. But because I wanted a more accurate and reliable way to locate elements in the webpage, I did a little more digging. Eventually, I started reading about `xpath` and how it could be potentionally used to our advantage in terms of automating actions (submitting forms, clicking buttons, the likes). 
-
-
-
-* The program is importing the Selenium module (it's importing the `webdriver` attribute in particular), the `time` module, and a attribute to catch a error that the program faces often with (`ElementNotVisibleException`)
-What this program is going to do
+You can see that both the username and password variable refers to a `driver.find_element_by_id` function. But because I wanted a more accurate and reliable way to locate elements in the webpage, I did a little more digging. Eventually, I started reading about `xpath` and how it could be potentionally used to our advantage in terms of automating actions (submitting forms, clicking buttons, the likes). According to "Selenium with Python" docs, `xpath` would be useful in the sense that 
+> XPath is the language used for locating nodes in an XML document... Selenium users can leverage this powerful language to target elements in their web applications... and [it] opens up all sorts of new possibilities such as locating the third checkbox on the page... One of the main reasons for using XPath is when you don’t have a suitable id or name attribute for the element you wish to locate."
 
