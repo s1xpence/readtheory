@@ -72,3 +72,5 @@ username.send_keys('14367@students.isb.ac.th')
 password = driver.find_element_by_xpath('//*[@id="password"]')
 password.send_keys('mhNF2PqdfjF3W')
 ```
+As you can see, I've implemented the `xpath` method here and have also extracted the `xpath` ID of the element we're interested in, which is both the `username` and `password` field. I honestly don't quite know how you're supposed to get the `xpath` ID manually, so I just used a feature that Google Chrome has, which can be found [here](https://stackoverflow.com/a/42194160)
+You might have also noticed that I've also gone ahead and implemeted the `send_keys` method here, with a email thats about to expire in a few months and a password (specifically for ReadTheory) that I don't care too much about.
