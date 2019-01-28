@@ -64,7 +64,6 @@ Basically, its saying that `xpath` offers a much more accurate way to target the
 Okay, so now that we know how to select an element that we're interested in, exactly how do we "type" characters into the input that we're interested in? I Googled for a bit before stumbling upon [this answer](https://stackoverflow.com/a/21186468) on StackOverflow.
 
 The guy who posted that answer states that we could use "`WebElement.send_keys` method to simulate key typing", which is all we really need. And thus, a few lines of new code was born.
-
 ```
 username = driver.find_element_by_xpath('//*[@id="username"]')
 username.send_keys('14367@students.isb.ac.th')
@@ -76,8 +75,13 @@ As you can see, I've implemented the `xpath` method here and have also extracted
 You might have also noticed that I've also gone ahead and implemeted the `send_keys` method here, with a email thats about to expire in a few months and a password (specifically for ReadTheory) that I don't care too much about. 
 
 Now for the fun part. I've got to figure out how to make it so that it "clicks" on the submit form for me. But fear not, for this is what Selenium was designed for as well. A quick search showed that I could submit just by using the `.click()` function in tandem with the `xpath` function. This hurdle was easily overcome as well. And as such, I added a new line of code to my program:
-
 ```
 login_click = driver.find_element_by_xpath('//*[@id="ajaxLogin"]').click()
+```
+
+For reference, the line of code that I was able to derive the `xpath` ID that allowed me to login is here:
+
+```
+<input type="submit" name="ajaxLogin" value="Log in" class="jquery-button jquery-button-large" id="ajaxLogin">
 ```
 
