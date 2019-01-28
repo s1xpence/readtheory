@@ -73,4 +73,9 @@ password = driver.find_element_by_xpath('//*[@id="password"]')
 password.send_keys('mhNF2PqdfjF3W')
 ```
 As you can see, I've implemented the `xpath` method here and have also extracted the `xpath` ID of the element we're interested in, which is both the `username` and `password` field. I honestly don't quite know how you're supposed to get the `xpath` ID manually, so I just used a feature that Google Chrome has, which can be found [here](https://stackoverflow.com/a/42194160)
-You might have also noticed that I've also gone ahead and implemeted the `send_keys` method here, with a email thats about to expire in a few months and a password (specifically for ReadTheory) that I don't care too much about.
+You might have also noticed that I've also gone ahead and implemeted the `send_keys` method here, with a email thats about to expire in a few months and a password (specifically for ReadTheory) that I don't care too much about. 
+
+Now for the fun part. I've got to figure out how to make it so that it "clicks" on the submit form for me. But fear not, for this is what Selenium was designed for as well. A quick search showed that I could submit just by using the `.click()` function in tandem with the `xpath` function. This hurdle was easily overcome as well. And as such, I added a new line of code to my program:
+
+```login_click = driver.find_element_by_xpath('//*[@id="ajaxLogin"]').click()```
+
