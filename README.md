@@ -77,5 +77,7 @@ You might have also noticed that I've also gone ahead and implemeted the `send_k
 
 Now for the fun part. I've got to figure out how to make it so that it "clicks" on the submit form for me. But fear not, for this is what Selenium was designed for as well. A quick search showed that I could submit just by using the `.click()` function in tandem with the `xpath` function. This hurdle was easily overcome as well. And as such, I added a new line of code to my program:
 
-```login_click = driver.find_element_by_xpath('//*[@id="ajaxLogin"]').click()```
+```
+login_click = driver.find_element_by_xpath('//*[@id="ajaxLogin"]').click()
+```
 
